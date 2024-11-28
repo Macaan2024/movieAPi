@@ -5,35 +5,30 @@ import Search from './components/Search';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('Batman');
 
-  // Function to fetch movies data
   const DisplayMovies = async () => {
-    if (search === '') {
-      setMovies([]);  // Optional: Clear the movie list when there's no search term.
+    if (search.trim() === '') {
+      setMovies([]); 
       return;
     }
 
     const url = `http://www.omdbapi.com/?s=${search}&apikey=8c9ec521`;
     const response = await fetch(url);
     const responseToJson = await response.json();
-
     console.log(responseToJson);
-
-    // Check if the response contains movies and set them to state
-    if (responseToJson.Search) {
-      setMovies(responseToJson.Search); // Set the movies state with the fetched data
+   
+    if (responseToJson.Response === "True") {
+      setMovies(responseToJson.Search);
     } else {
-      setMovies([]); // Optional: Handle case when no movies found
+      setMovies([]); 
+
     }
   };
 
-  // useEffect to call DisplayMovies whenever the search term changes
   useEffect(() => {
-    if (search.trim()) {
-      DisplayMovies();
-    }
-  }, [search]); // Run the effect when the search state changes
+    DisplayMovies();
+  }, [search]); 
 
   return (
     <div className="App">
@@ -43,5 +38,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
