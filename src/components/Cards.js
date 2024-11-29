@@ -1,4 +1,10 @@
-const Cards = (props) =>
-    <img src={props.url} alt="movies"></img>
+const Cards = () => {
+
+    return (
+        <>
+        
+        </>
+    )
+}
 
 export default Cards

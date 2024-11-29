@@ -24,7 +24,10 @@ function Header() {
                         </li>
                         <li>
                             <a className="font-normal">Contacts</a>
-                        </li>   
+                        </li>
+                        <li>
+                            <a className="font-normal">Favorite</a>
+                        </li>      
                     </ul>
                 </div>
             </div>

@@ -1,12 +1,23 @@
 import React from "react";
+import ViewMovie from "./ViewMovie";
 
-const MovieList = (props) => {
+const MovieList = ({ movies, selectedMovie, setSelectedMovie }) => {
+  const handleMovieSelected = (movie) => {
+    setSelectedMovie(movie);
+  };
+
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4">
-        {props.movies.map((movie, index) => {
-          return (
-            <div key={index} className="movie-item">
+      {selectedMovie ? (
+        <ViewMovie movie={selectedMovie} />
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4">
+          {movies.map((movie, index) => (
+            <div
+              key={index}
+              className="movie-item cursor-pointer"
+              onClick={() => handleMovieSelected(movie)} // Handle movie click
+            >
               <img
                 src={movie.Poster}
                 alt={movie.Title}
@@ -14,9 +25,9 @@ const MovieList = (props) => {
               />
               <h3 className="text-center mt-2">{movie.Title}</h3>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   );
 };
