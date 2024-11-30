@@ -1,4 +1,4 @@
-function Header() {
+function Header({onHomeClick}) {
 
     return (
         <>
@@ -17,7 +17,7 @@ function Header() {
                 <div className="flex items-center sm:justify-center">
                     <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                         <li>
-                            <a className="font-normal">Home</a>
+                            <a className="font-normal" onClick={onHomeClick}>Home</a>
                         </li>
                         <li>
                             <a className="font-normal">About</a>

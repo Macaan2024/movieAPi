@@ -13,7 +13,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
-
+ 
   const fetchMovies = async () => {
     const url = `http://www.omdbapi.com/?s=${search}&apikey=8c9ec521&page=${currentPage}`;
     const response = await fetch(url);
@@ -32,10 +32,15 @@ function App() {
     fetchMovies();
   }, [search, currentPage]); // Fetch when `search` or `pagination` changes
 
+  const handleHomeCLick = () => {
+    setSelectedMovie(null);
+    setSearch("batman");
+  }
+
 
   return (
     <div className="App">
-      <Header />
+      <Header onHomeClick={handleHomeCLick} />
       {selectedMovie === null && (<Search search={search} setSearch={setSearch} />)}
       <p className="text-center text-red-500">{error}</p>
       <div className="2xl mt-10 mb-12">
