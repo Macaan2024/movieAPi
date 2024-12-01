@@ -11,7 +11,7 @@ const MovieList = ({ movies, selectedMovie, setSelectedMovie }) => {
       {selectedMovie ? (
         <ViewMovie movie={selectedMovie} />
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 h-auto">
           {movies.map((movie, index) => (
             <div
               key={index}
@@ -21,7 +21,7 @@ const MovieList = ({ movies, selectedMovie, setSelectedMovie }) => {
               <img
                 src={movie.Poster}
                 alt={movie.Title}
-                className="w-full h-auto object-cover"
+                className="w-auto h-auto object-cover"
               />
               <h3 className="text-center mt-2">{movie.Title}</h3>
             </div>
