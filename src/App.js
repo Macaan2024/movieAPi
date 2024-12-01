@@ -5,7 +5,6 @@ import Search from "./components/Search";
 import ButtonPrevious from "./components/ButtonPrevious";
 import ButtonNext from './components/ButtonNext';
 import PaginationNumbers from "./components/PaginationNumbers";
-import ViewMovie from './components/ViewMovie';
 import MovieCategory from './components/MovieCategory';
 
 function App() {
