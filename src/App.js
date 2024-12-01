@@ -16,7 +16,7 @@ function App() {
   const [movieCategory, setMovieCategory] = useState("");
  
   const fetchMovies = async () => {
-    const url = `http://www.omdbapi.com/?s=${search}&apikey=8c9ec521&page=${currentPage}${movieCategory !== '' ? `&type=${movieCategory}` : ''}`;
+    const url = `https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?s=${search}&apikey=8c9ec521&page=${currentPage}${movieCategory !== '' ? `&type=${movieCategory}` : ''}`;
     const response = await fetch(url);
     const responseToJson = await response.json();
 
