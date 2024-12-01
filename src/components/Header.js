@@ -18,16 +18,7 @@ function Header({onHomeClick}) {
                     <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                         <li>
                             <a className="font-normal" onClick={onHomeClick}>Home</a>
-                        </li>
-                        <li>
-                            <a className="font-normal">About</a>
-                        </li>
-                        <li>
-                            <a className="font-normal">Contacts</a>
-                        </li>
-                        <li>
-                            <a className="font-normal">Favorite</a>
-                        </li>      
+                        </li>     
                     </ul>
                 </div>
             </div>
